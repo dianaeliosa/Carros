@@ -1,13 +1,22 @@
-<a href="{{ route ('carros.create') }}">Registrar carros</a>
+@extends('layouts.app')
+
+@section('marca_carro', 'Lista de carros')
+
+@section('content')
+
+<div class="text-rigth">
+	<a href="{{ route ('carros.create') }}" class="btn btn-warning">Registrar carros</a>
+</div>
+
 	<hr>
 
-<table>
+<table class="table table-hover">
 
 	<thead>
 		<tr>
 			<td>Marca</td>
-			<td></td>
-			<td></td>
+			<td>Detalle</td>
+			<td>Editar</td>
 
 		</tr>
 
@@ -20,18 +29,15 @@
 	<tr>
 		<td>{{ $carro->marca }}</td>
 		<td>
-			<a href="{{ route('carros.show', $carro) }}">Mostrar detalle del carro</a>
+			<a href="{{ route('carros.show', $carro) }}" class="btn btn-outline-dark">Mostrar</a>
 		</td>
 
 		<td>
-			<a href="{{ route('carros.edit', $carro) }}">Editar registro</a>
+			<a href="{{ route('carros.edit', $carro) }}" class="btn btn-outline-info">Editar</a>
 
 		</td>
 
 	</tr>
-
-
-
 
 
 @empty
@@ -42,4 +48,6 @@
 		</tbody>
 
 </table>
+
+@endsection
 

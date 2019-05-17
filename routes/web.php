@@ -24,4 +24,6 @@ Route::get('carros/{carro}', 'CarroController@show')->name('carros.show');
 Route::get('carros/{carro}/editar', 'CarroController@edit')->name('carros.edit');
 
 Route::put('carros/{carro}/editar', 'CarroController@update')->name('carros.update');
+
+
 Route::delete('carros/{carro}', 'CarroController@destroy')->name('carros.destroy'); 
